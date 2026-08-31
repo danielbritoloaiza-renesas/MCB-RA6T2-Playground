@@ -1,0 +1,34 @@
+# Build artifacts
+Debug/
+build/
+bin/
+obj/
+
+# Compiled / generated output
+*.o
+*.obj
+*.d
+*.elf
+*.axf
+*.out
+*.hex
+*.bin
+*.srec
+*.map
+*.lst
+*.a
+*.so
+*.dll
+*.exe
+*.log
+
+# IDE / editor temporary files
+.vscode/
+.settings/
+*.swp
+*.tmp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
