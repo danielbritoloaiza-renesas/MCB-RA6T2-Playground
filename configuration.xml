@@ -223,6 +223,10 @@
       <description>Serial Peripheral Interface</description>
       <originalPack>Renesas.RA.6.5.0.pack</originalPack>
     </component>
+    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_flash_hp" variant="" vendor="Renesas" version="6.5.0">
+      <description>Flash Memory High Performance</description>
+      <originalPack>Renesas.RA.6.5.0.pack</originalPack>
+    </component>
   </raComponentSelection>
   <raElcConfiguration/>
   <raIcuConfiguration/>
@@ -297,13 +301,26 @@
       <property id="module.driver.transfer.offset" value="1"/>
       <property id="module.driver.transfer.src.buffer" value="1"/>
     </module>
+    <module id="module.driver.flash_on_flash_hp.614070724">
+      <property id="module.driver.flash.name" value="g_flash0"/>
+      <property id="module.driver.flash.data_flash_bgo" value="module.driver.flash.data_flash_bgo.disabled"/>
+      <property id="module.driver.flash.p_callback" value="NULL"/>
+      <property id="module.driver.flash.ipl" value="_disabled"/>
+      <property id="module.driver.flash.err_ipl" value="_disabled"/>
+    </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.spi_on_spi_b.1386657130">
         <stack module="module.driver.transfer_on_dmac.937442966" requires="module.driver.spi_on_spi_b.requires.transfer_tx"/>
         <stack module="module.driver.transfer_on_dmac.2055855982" requires="module.driver.spi_on_spi_b.requires.transfer_rx"/>
       </stack>
+      <stack module="module.driver.flash_on_flash_hp.614070724"/>
     </context>
+    <config id="config.driver.flash_hp">
+      <property id="config.driver.flash_hp.param_checking_enable" value="config.flash_hp.param_checking_enable.bsp"/>
+      <property id="config.driver.flash_hp.param_code_flash_programming_enable" value="config.driver.flash_hp.param_code_flash_programming_enable.enabled"/>
+      <property id="config.driver.flash_hp.param_data_flash_programming_enable" value="config.driver.flash_hp.param_data_flash_programming_enable.disabled"/>
+    </config>
     <config id="config.driver.dmac">
       <property id="config.driver.dmac.param_checking_enable" value="config.driver.dmac.param_checking_enable.bsp"/>
     </config>

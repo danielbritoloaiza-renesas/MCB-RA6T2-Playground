@@ -4,10 +4,22 @@
 #include <stdint.h>
 #include "bsp_api.h"
 #include "common_data.h"
+#include "r_flash_hp.h"
+#include "r_flash_api.h"
 #include "r_dmac.h"
 #include "r_transfer_api.h"
 #include "r_spi_b.h"
 FSP_HEADER
+/* Flash on Flash HP Instance */
+extern const flash_instance_t g_flash0;
+
+/** Access the Flash HP instance using these structures when calling API functions directly (::p_api is not used). */
+extern flash_hp_instance_ctrl_t g_flash0_ctrl;
+extern const flash_cfg_t g_flash0_cfg;
+
+#ifndef NULL
+void NULL(flash_callback_args_t *p_args);
+#endif
 /* Transfer on DMAC Instance. */
 extern const transfer_instance_t g_transfer1;
 

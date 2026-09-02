@@ -251,6 +251,11 @@ FSP Configuration
   Module "Transfer (r_dmac)"
     Parameter Checking: Default (BSP)
     
+  Module "Flash (r_flash_hp)"
+    Parameter Checking: Default (BSP)
+    Code Flash Programming Enable: Enabled
+    Data Flash Programming Enable: Disabled
+    
   HAL
     Instance "g_ioport I/O Port (r_ioport)"
       Name: g_ioport
@@ -321,3 +326,10 @@ FSP Configuration
         Offset value (Valid only when address mode is Offset addition): 1
         Source Buffer Size: 1
         
+    Instance "g_flash0 Flash (r_flash_hp)"
+      Name: g_flash0
+      Data Flash Background Operation: Disabled
+      Callback: NULL
+      Flash Ready Interrupt Priority: Disabled
+      Flash Error Interrupt Priority: Disabled
+      
