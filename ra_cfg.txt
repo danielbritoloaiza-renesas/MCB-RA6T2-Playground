@@ -243,6 +243,14 @@ FSP Configuration
     Parameter Checking: Default (BSP)
     CCD Support: Not Supported
     
+  Module "SPI (r_spi_b)"
+    Parameter Checking: Default (BSP)
+    Enable Support for using a transfer API: Enabled
+    Enable Transmitting from RXI Interrupt: Disabled
+    
+  Module "Transfer (r_dmac)"
+    Parameter Checking: Default (BSP)
+    
   HAL
     Instance "g_ioport I/O Port (r_ioport)"
       Name: g_ioport
@@ -252,3 +260,64 @@ FSP Configuration
       4th Port ELC Trigger Source: Disabled
       Pin Configuration Name: g_bsp_pin_cfg
       
+    Instance "g_spi1 SPI (r_spi_b)"
+      Name: g_spi1
+      Channel: 1
+      Receive Interrupt Priority: Disabled
+      Transmit Buffer Empty Interrupt Priority: Disabled
+      Transfer Complete Interrupt Priority: Priority 12
+      Error Interrupt Priority: Priority 12
+      Operating Mode: Master
+      Clock Phase: Data sampling on odd edge, data variation on even edge
+      Clock Polarity: Low when idle
+      Mode Fault Error: Disable
+      Bit Order: MSB First
+      Callback: spi_callback
+      SPI Mode: Clock Synchronous Operation
+      SPI burst transfer without delay between frames: Disable
+      Communication Mode Select: Full Duplex
+      Slave Select Polarity: Active Low
+      Select SSL(Slave Select): SSL0
+      MOSI Idle State: MOSI Idle Value Fixing Disable
+      Parity Mode: Disabled
+      Byte Swapping: Disable
+      Clock Source: PCLK
+      Bitrate: 1000000
+      Clock Delay: 1 Clock
+      SSL Negation Delay: 1 Clock
+      Next Access Delay: 1 Clock
+      
+      Instance "g_transfer0 Transfer (r_dmac) SPI1 TXI (Transmit buffer empty)"
+        Name: g_transfer0
+        Channel: 0
+        Mode: Normal
+        Transfer Size: 2 Bytes
+        Destination Address Mode: Fixed
+        Source Address Mode: Incremented
+        Repeat Area (Unused in Normal Mode): Source
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Repeat,Block or Repeat-Block Mode): 0
+        Activation Source: SPI1 TXI (Transmit buffer empty)
+        Callback: g_spi1_tx_transfer_callback
+        Transfer End Interrupt Priority: Priority 9
+        Interrupt Frequency: Interrupt after all transfers have completed
+        Offset value (Valid only when address mode is Offset addition): 1
+        Source Buffer Size: 1
+        
+      Instance "g_transfer1 Transfer (r_dmac) SPI1 RXI (Receive buffer full)"
+        Name: g_transfer1
+        Channel: 1
+        Mode: Normal
+        Transfer Size: 2 Bytes
+        Destination Address Mode: Incremented
+        Source Address Mode: Fixed
+        Repeat Area (Unused in Normal Mode): Destination
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Repeat,Block or Repeat-Block Mode): 0
+        Activation Source: SPI1 RXI (Receive buffer full)
+        Callback: g_spi1_rx_transfer_callback
+        Transfer End Interrupt Priority: Priority 9
+        Interrupt Frequency: Interrupt after all transfers have completed
+        Offset value (Valid only when address mode is Offset addition): 1
+        Source Buffer Size: 1
+        

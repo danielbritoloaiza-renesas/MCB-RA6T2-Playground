@@ -1,5 +1,10 @@
 #include "hal_data.h"
 
+void spi_callback(spi_callback_args_t * p_args)
+{
+    FSP_PARAMETER_NOT_USED(p_args);
+}
+
 #if (1 == BSP_MULTICORE_PROJECT) && BSP_TZ_SECURE_BUILD
 bsp_ipc_semaphore_handle_t g_core_start_semaphore =
 {
@@ -42,6 +47,26 @@ void hal_entry(void) {
     /* Enter non-secure code */
     R_BSP_NonSecureEnter();
 #endif
+
+    const uint8_t hello_world[] = "Hello World\r\n";
+
+    fsp_err_t err = g_spi1.p_api->open(g_spi1.p_ctrl, g_spi1.p_cfg);
+    if (FSP_SUCCESS != err)
+    {
+        while (1)
+        {
+            /* Stay here if SPI could not be opened. */
+        }
+    }
+
+    err = g_spi1.p_api->write(g_spi1.p_ctrl, hello_world, sizeof(hello_world) - 1U, SPI_BIT_WIDTH_8_BITS);
+    if (FSP_SUCCESS != err)
+    {
+        while (1)
+        {
+            /* Stay here if SPI write failed. */
+        }
+    }
 
     while (1)
     {
