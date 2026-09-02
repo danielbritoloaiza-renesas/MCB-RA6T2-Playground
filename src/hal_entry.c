@@ -12,9 +12,9 @@ bsp_ipc_semaphore_handle_t g_core_start_semaphore =
  * is called by main() when no RTOS is used.
  **********************************************************************************************************************/
 void hal_entry(void) {
-	/* TODO: add your own code here */
+    /* TODO: add your own code here */
 
-	/* Wake up 2nd core if this is first core and we are inside a multicore project. */
+    /* Wake up 2nd core if this is first core and we are inside a multicore project. */
 #if (0 == _RA_CORE) && (1 == BSP_MULTICORE_PROJECT) && !BSP_TZ_NONSECURE_BUILD
 
 #if BSP_TZ_SECURE_BUILD
@@ -42,6 +42,27 @@ void hal_entry(void) {
     /* Enter non-secure code */
     R_BSP_NonSecureEnter();
 #endif
+
+    while (1)
+    {
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_13_PIN_01, BSP_IO_LEVEL_HIGH);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_13_PIN_02, BSP_IO_LEVEL_HIGH);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_13_PIN_03, BSP_IO_LEVEL_HIGH);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_13_PIN_15, BSP_IO_LEVEL_HIGH);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_12_PIN_06, BSP_IO_LEVEL_HIGH);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_14_PIN_14, BSP_IO_LEVEL_HIGH);
+
+        R_BSP_SoftwareDelay(200, BSP_DELAY_UNITS_MILLISECONDS);
+
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_13_PIN_01, BSP_IO_LEVEL_LOW);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_13_PIN_02, BSP_IO_LEVEL_LOW);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_13_PIN_03, BSP_IO_LEVEL_LOW);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_13_PIN_15, BSP_IO_LEVEL_LOW);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_12_PIN_06, BSP_IO_LEVEL_LOW);
+        R_IOPORT_PinWrite(&g_ioport_ctrl, BSP_IO_PORT_14_PIN_14, BSP_IO_LEVEL_LOW);
+
+        R_BSP_SoftwareDelay(200, BSP_DELAY_UNITS_MILLISECONDS);
+    }
 }
 
 #if BSP_TZ_SECURE_BUILD
