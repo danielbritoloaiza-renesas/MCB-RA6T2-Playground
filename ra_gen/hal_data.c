@@ -85,7 +85,7 @@ const spi_b_extended_cfg_t g_spi1_ext_cfg = { .spi_clksyn =
 		.mosi_idle = SPI_B_MOSI_IDLE_VALUE_FIXING_DISABLE, .parity =
 				SPI_B_PARITY_MODE_DISABLE, .byte_swap = SPI_B_BYTE_SWAP_DISABLE,
 		.clock_source = SPI_B_CLOCK_SOURCE_PCLK, .spck_div = {
-		/* Actual calculated bitrate: 15000000. */.spbr = 3, .brdv = 0 },
+		/* Actual calculated bitrate: 1000000. */.spbr = 59, .brdv = 0 },
 		.spck_delay = SPI_B_DELAY_COUNT_1, .ssl_negation_delay =
 				SPI_B_DELAY_COUNT_1, .next_access_delay = SPI_B_DELAY_COUNT_1,
 		.burst_interframe_delay = SPI_B_BURST_TRANSFER_WITH_DELAY

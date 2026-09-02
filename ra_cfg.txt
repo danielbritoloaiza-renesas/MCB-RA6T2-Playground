@@ -282,7 +282,7 @@ FSP Configuration
       Parity Mode: Disabled
       Byte Swapping: Disable
       Clock Source: PCLK
-      Bitrate: 16000000
+      Bitrate: 1000000
       Clock Delay: 1 Clock
       SSL Negation Delay: 1 Clock
       Next Access Delay: 1 Clock

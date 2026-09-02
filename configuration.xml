@@ -258,7 +258,7 @@
       <property id="module.driver.spi_b.parity" value="module.driver.spi_b.parity_mode.disable"/>
       <property id="module.driver.spi_b.byte_swap" value="module.driver.spi_b.byte_swap.disable"/>
       <property id="module.driver.spi_b.clock_source" value="module.driver.spi_b.clock_source.pclk"/>
-      <property id="module.driver.spi_b.bitrate" value="16000000"/>
+      <property id="module.driver.spi_b.bitrate" value="1000000"/>
       <property id="module.driver.spi_b.spck_delay" value="module.driver.spi_b.spck_delay.one"/>
       <property id="module.driver.spi_b.ssl_negation_delay" value="module.driver.spi_b.ssl_negation_delay.one"/>
       <property id="module.driver.spi_b.next_access_delay" value="module.driver.spi_b.next_access_delay.one"/>
