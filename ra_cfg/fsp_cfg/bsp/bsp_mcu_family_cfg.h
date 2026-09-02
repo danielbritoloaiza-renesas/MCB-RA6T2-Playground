@@ -98,7 +98,7 @@ extern "C" {
             (((RA_NOT_DEFINED > 0) ? 0U : 1U) << 20) /* TFU */ | \
             (((RA_NOT_DEFINED > 0) ? 0U : 1U) << 21) /* IIRFA */ | \
             (((RA_NOT_DEFINED > 0) ? 0U : 1U) << 27) /* CANFD */ | \
-            (((1 > 0) ? 0U : 1U) << 31) /* SCE5 */ | \
+            (((RA_NOT_DEFINED > 0) ? 0U : 1U) << 31) /* SCE5 */ | \
             0x77cfdffc) /* Unused */
 #endif
 #ifndef BSP_TZ_CFG_PSARD
