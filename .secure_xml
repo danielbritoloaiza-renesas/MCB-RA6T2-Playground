@@ -60,6 +60,8 @@
   </raClockConfiguration>
   <raPinConfiguration>
     <pincfg active="true" name="" symbol="">
+      <configSetting altId="pc06.output.low" configurationId="pc06"/>
+      <configSetting altId="pc06.gpio_mode.gpio_mode_out.low" configurationId="pc06.gpio_mode"/>
       <configSetting altId="pc10.gpio_mode.gpio_mode_peripheral" configurationId="pc10.gpio_mode"/>
       <configSetting altId="pc11.gpio_speed.gpio_speed_m" configurationId="pc11.gpio_drivecapacity"/>
       <configSetting altId="pc11.gpio_mode.gpio_mode_peripheral" configurationId="pc11.gpio_mode"/>
@@ -67,6 +69,16 @@
       <configSetting altId="pc12.gpio_mode.gpio_mode_peripheral" configurationId="pc12.gpio_mode"/>
       <configSetting altId="pd00.gpio_speed.gpio_speed_m" configurationId="pd00.gpio_drivecapacity"/>
       <configSetting altId="pd00.gpio_mode.gpio_mode_peripheral" configurationId="pd00.gpio_mode"/>
+      <configSetting altId="pd01.output.low" configurationId="pd01"/>
+      <configSetting altId="pd01.gpio_mode.gpio_mode_out.low" configurationId="pd01.gpio_mode"/>
+      <configSetting altId="pd02.output.low" configurationId="pd02"/>
+      <configSetting altId="pd02.gpio_mode.gpio_mode_out.low" configurationId="pd02.gpio_mode"/>
+      <configSetting altId="pd03.output.low" configurationId="pd03"/>
+      <configSetting altId="pd03.gpio_mode.gpio_mode_out.low" configurationId="pd03.gpio_mode"/>
+      <configSetting altId="pd15.output.low" configurationId="pd15"/>
+      <configSetting altId="pd15.gpio_mode.gpio_mode_out.low" configurationId="pd15.gpio_mode"/>
+      <configSetting altId="pe14.output.low" configurationId="pe14"/>
+      <configSetting altId="pe14.gpio_mode.gpio_mode_out.low" configurationId="pe14.gpio_mode"/>
       <configSetting altId="spi1.miso1.pc11" configurationId="spi1.miso1" peripheral="SPI1"/>
       <configSetting altId="spi1.mosi1.pc12" configurationId="spi1.mosi1" peripheral="SPI1"/>
       <configSetting altId="spi1.rspck1.pc10" configurationId="spi1.rspck1" peripheral="SPI1"/>

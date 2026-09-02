@@ -195,6 +195,8 @@
   <raPinConfiguration>
     <pincfg active="true" name="R7FA6T2BD3CFP.pincfg" selected="true" symbol="g_bsp_pin_cfg">
       <configSetting altId="jtag_fslash_swd.mode.jtag.free" configurationId="jtag_fslash_swd.mode"/>
+      <configSetting altId="pc06.output.low" configurationId="pc06"/>
+      <configSetting altId="pc06.gpio_mode.gpio_mode_out.low" configurationId="pc06.gpio_mode"/>
       <configSetting altId="pc10.spi1.rspck1" configurationId="pc10"/>
       <configSetting altId="pc10.gpio_mode.gpio_mode_peripheral" configurationId="pc10.gpio_mode"/>
       <configSetting altId="pc11.spi1.miso1" configurationId="pc11"/>
@@ -206,6 +208,16 @@
       <configSetting altId="pd00.spi1.sslb0" configurationId="pd00"/>
       <configSetting altId="pd00.gpio_speed.gpio_speed_m" configurationId="pd00.gpio_drivecapacity"/>
       <configSetting altId="pd00.gpio_mode.gpio_mode_peripheral" configurationId="pd00.gpio_mode"/>
+      <configSetting altId="pd01.output.low" configurationId="pd01"/>
+      <configSetting altId="pd01.gpio_mode.gpio_mode_out.low" configurationId="pd01.gpio_mode"/>
+      <configSetting altId="pd02.output.low" configurationId="pd02"/>
+      <configSetting altId="pd02.gpio_mode.gpio_mode_out.low" configurationId="pd02.gpio_mode"/>
+      <configSetting altId="pd03.output.low" configurationId="pd03"/>
+      <configSetting altId="pd03.gpio_mode.gpio_mode_out.low" configurationId="pd03.gpio_mode"/>
+      <configSetting altId="pd15.output.low" configurationId="pd15"/>
+      <configSetting altId="pd15.gpio_mode.gpio_mode_out.low" configurationId="pd15.gpio_mode"/>
+      <configSetting altId="pe14.output.low" configurationId="pe14"/>
+      <configSetting altId="pe14.gpio_mode.gpio_mode_out.low" configurationId="pe14.gpio_mode"/>
       <configSetting altId="spi1.miso1.pc11" configurationId="spi1.miso1"/>
       <configSetting altId="spi1.mode.enabled.b" configurationId="spi1.mode"/>
       <configSetting altId="spi1.mosi1.pc12" configurationId="spi1.mosi1"/>
